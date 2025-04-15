@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "5Y2tRiFfVSXMLmsBRSFZKDSH0HFhhi1m49xVX7XWn8A=",
+  "Source": "ABM_MyApi",
+  "BasePath": "_content/ABM_MyApi",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}
