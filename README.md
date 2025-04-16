@@ -1,36 +1,39 @@
 # ABM_MyApi
- API RESTful em .NET
 
----
-
-## API funcional, enxuta e bem estruturada 
+API RESTful em .NET funcional, enxuta e bem estruturada 
 
 Criação de uma **API RESTful** em .NET com estrutura organizada, implementando um controller (`UsersController`) com operações _CRUD_ básicas usando uma lista estática de usuários e seguindo boas práticas iniciais de roteamento e versionamento.
 
+- **Create (_Criar_)** – Adicionar novos registros ou dados ao sistema.
+- **Read (_Ler_)** – Consultar ou visualizar os dados armazenados.
+- **Update (_Atualizar_)** – Modificar registros existentes.
+- **Delete (_Excluir_)** – Remover dados do sistema.
+
 ---
 
-## ✅ **O que foi feito!**
+## **O que foi feito!**
 
-### ✔️ Estrutura do Projeto
+### Estrutura do Projeto
 - `Controllers/`, `Models/`: organizados.
 - `Program.cs`: usando o estilo minimalista do .NET 6+.
 
-### ✔️ Roteamento
+### Roteamento
 - Uso de `[Route("api/v1/[controller]")]`: já preparando versionamento da API.
 
-### ✔️ CRUD Completo
+### CRUD Completo
 - O controller cobre todos os métodos básicos: `GET`, `GET by id`, `POST`, `PUT`, `DELETE`.
 
-### ✔️ Boas práticas já aplicadas:
+### Boas práticas já aplicadas:
 - Verificação de existência do usuário antes de atualizar/deletar.
 - Uso do `CreatedAtAction` no `POST`.
 - Retorno apropriado (`NotFound()`, `NoContent()`, `Ok()`).
 
 ---
 
-## 🛠️ **A fazer!**
+## **A fazer!**
 
-### 📌 1. Separar a lógica de negócios (usar `Services/`)
+### 1. Separar a lógica de negócios (usar `Services/`)
+
 Atualmente, o controller está manipulando a lista `_users`. Isso é OK pra aprender, mas em produção, podemos separar isso em uma camada de serviço, por exemplo:
 
 ```csharp
@@ -65,7 +68,8 @@ Depois injetamos no controller via construtor.
 
 ---
 
-### 📌 2. Adicionar validação (usando `DataAnnotations`)
+### 2. Adicionar validação (usando `DataAnnotations`)
+
 Podemos validar a entrada de dados:
 
 ```csharp
@@ -83,7 +87,8 @@ E no `CreateUser`, basta checar `ModelState` (mas o ASP.NET faz isso automaticam
 
 ---
 
-### 📌 3. Incrementar o ID automaticamente
+### 3. Incrementar o ID automaticamente
+
 Atualmente o `POST` espera que o cliente mande um ID. Melhor seria o servidor gerar isso:
 
 ```csharp
@@ -98,7 +103,7 @@ public ActionResult<User> CreateUser(User user)
 
 ---
 
-### 📌 4. Habilitar o uso de serviços no `Program.cs` (se for usar Services depois)
+### 4. Habilitar o uso de serviços no `Program.cs` (se for usar Services depois)
 
 ```csharp
 var builder = WebApplication.CreateBuilder(args);
